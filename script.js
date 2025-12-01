@@ -360,15 +360,31 @@ function startCameraProperly() {
     cameraRunning = true;
 
     const video = document.getElementById("video");
-    const camera = new Camera(video, {
-        onFrame: async () => {
-            await hands.send({ image: video });
+
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            width: { ideal: 1280 },  // 4:3 max native Auflösung Frontkamera
+            height: { ideal: 960 },
+            facingMode: "user"
         },
-        width: 640,
-        height: 480
+        audio: false
+    }).then(stream => {
+        video.srcObject = stream;
+
+        const camera = new Camera(video, {
+            onFrame: async () => {
+                await hands.send({ image: video });
+            },
+            width: 1280,
+            height: 960
+        });
+
+        camera.start();
+    }).catch(err => {
+        console.error("Fehler beim Zugriff auf die Kamera:", err);
     });
-    camera.start();
 }
+
 
 // =====================
 // MediaPipe Callback
