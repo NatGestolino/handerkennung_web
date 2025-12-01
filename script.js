@@ -455,7 +455,7 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".page").forEach(p => p.style.display = "none");
         document.getElementById(id).style.display = "block";
 
-        const cameraPages = ["page3", "page8"]; // Seiten mit Kamera
+        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41"]; // Seiten mit Kamera
         const cameraContainer = document.getElementById("cameraContainer");
 
         if (cameraPages.includes(id)) {
@@ -570,7 +570,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // kapitel 3
+    // 
     document.getElementById("gotoPage28").addEventListener("click", () => showPage("page28"));
     document.getElementById("gotoPage29").addEventListener("click", () => showPage("page29"));
     document.getElementById("gotoPage30").addEventListener("click", () => showPage("page30"));
@@ -604,5 +604,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     document.getElementById("gotoPage1").addEventListener("click", () => showPage("page1"));
+
+    document.getElementById("gotoPage1_from2").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage2_from3").addEventListener("click", () => showPage("page2"));
+    document.getElementById("gotoPage3_from4").addEventListener("click", () => showPage("page3"));
+
 });
 
