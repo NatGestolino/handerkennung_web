@@ -1034,8 +1034,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Page 8 → Page 9
     document.getElementById("gotoPage9").addEventListener("click", () => showPage("page9"));
 
-    // Page 8 → Page 5 (BACK TO KAPITEL)
-    document.getElementById("gotoPage5_from8").addEventListener("click", () => showPage("page5"));
+    // Page 8 → Page 5 (BACK TO KAPITEL) >>> ändern zu wort davor >>> show page vorher
+    document.getElementById("gotoPage5_from8").addEventListener("click", () => showPage("page7"));
 
     // Page 9 → Page 10
     document.getElementById("gotoPage10").addEventListener("click", () => showPage("page10"));
@@ -1044,7 +1044,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage11").addEventListener("click", () => showPage("page11"));
 
     // Page 10 → Page 5 (BACK TO KAPITEL)
-    document.getElementById("gotoPage5_from10").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from10").addEventListener("click", () => showPage("page9"));
 
     // Page 11 → Page 12
     document.getElementById("gotoPage12").addEventListener("click", () => showPage("page12"));
@@ -1053,7 +1053,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage13").addEventListener("click", () => showPage("page13"));
 
     // Page 12 → Page 5 (BACK TO KAPITEL)
-    document.getElementById("gotoPage5_from12").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from12").addEventListener("click", () => showPage("page11"));
 
     // Page 13 → Page 14
     document.getElementById("gotoPage14").addEventListener("click", () => showPage("page14"));
@@ -1062,7 +1062,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage15").addEventListener("click", () => showPage("page15"));
 
     // Page 14 → Page 5 (BACK TO KAPITEL)
-    document.getElementById("gotoPage5_from14").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from14").addEventListener("click", () => showPage("page13"));
 
     // Page 15 → Page 16
     document.getElementById("gotoPage16").addEventListener("click", () => showPage("page16"));
@@ -1093,10 +1093,10 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage27").addEventListener("click", () => showPage("page27"));
 
     document.getElementById("gotoPage17_from27").addEventListener("click", () => showPage("page17"));
-    document.getElementById("gotoPage5_from25").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from23").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from21").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from19").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from25").addEventListener("click", () => showPage("page24"));
+    document.getElementById("gotoPage5_from23").addEventListener("click", () => showPage("page22"));
+    document.getElementById("gotoPage5_from21").addEventListener("click", () => showPage("page20"));
+    document.getElementById("gotoPage5_from19").addEventListener("click", () => showPage("page18"));
 
 
 
@@ -1116,10 +1116,10 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage37").addEventListener("click", () => showPage("page37"));
 
     document.getElementById("gotoPage17_from37").addEventListener("click", () => showPage("page17"));
-    document.getElementById("gotoPage5_from35").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from33").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from31").addEventListener("click", () => showPage("page5"));
-    document.getElementById("gotoPage5_from29").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from35").addEventListener("click", () => showPage("page34"));
+    document.getElementById("gotoPage5_from33").addEventListener("click", () => showPage("page32"));
+    document.getElementById("gotoPage5_from31").addEventListener("click", () => showPage("page30"));
+    document.getElementById("gotoPage5_from29").addEventListener("click", () => showPage("page28"));
 
 
 
@@ -1131,7 +1131,12 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage41").addEventListener("click", () => showPage("page41"));
 
     document.getElementById("gotoPage17_from41").addEventListener("click", () => showPage("page17"));
-    document.getElementById("gotoPage5_from39").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage5_from39").addEventListener("click", () => showPage("page38"));
+    //
+    document.getElementById("gotoPage40_from41").addEventListener("click", () => showPage("page40"));
+    document.getElementById("gotoPage36_from37").addEventListener("click", () => showPage("page36"));
+    document.getElementById("gotoPage26_from27").addEventListener("click", () => showPage("page26"));
+    document.getElementById("gotoPage15_from16").addEventListener("click", () => showPage("page15"));
 
     document.getElementById("gotoPage42").addEventListener("click", () => showPage("page42"));
 
@@ -1143,6 +1148,28 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage3_from4").addEventListener("click", () => showPage("page3"));
 
 
+    // navigation from animation page to animation page
+        // kapitel 1
+    document.getElementById("gotoPage13_from15").addEventListener("click", () => showPage("page13"));
+    document.getElementById("gotoPage11_from13").addEventListener("click", () => showPage("page11"));
+    document.getElementById("gotoPage9_from11").addEventListener("click", () => showPage("page9"));
+    document.getElementById("gotoPage7_from9").addEventListener("click", () => showPage("page7"));
+
+        // Kapitel 2
+    document.getElementById("gotoPage24_from26").addEventListener("click", () => showPage("page24"));
+    document.getElementById("gotoPage22_from24").addEventListener("click", () => showPage("page22"));
+    document.getElementById("gotoPage20_from22").addEventListener("click", () => showPage("page20"));
+    document.getElementById("gotoPage18_from20").addEventListener("click", () => showPage("page18"));
+
+        // Kapitel 3
+    document.getElementById("gotoPage34_from36").addEventListener("click", () => showPage("page34"));
+    document.getElementById("gotoPage32_from34").addEventListener("click", () => showPage("page32"));
+    document.getElementById("gotoPage30_from32").addEventListener("click", () => showPage("page30"));
+    document.getElementById("gotoPage28_from30").addEventListener("click", () => showPage("page28"));
+
+        // Kapitel 4
+    document.getElementById("gotoPage38_from40").addEventListener("click", () => showPage("page38"));
+    
 
 
 
