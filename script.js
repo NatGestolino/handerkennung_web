@@ -897,6 +897,7 @@ const allowedOutputsByPage = {
         //Kapitel 4 Notfälle --> keine Outputs
     page39:  ["x"],
     page41:  ["x"],
+    page58: ["x"],
 };
 
 
@@ -1056,7 +1057,7 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".page").forEach(p => p.style.display = "none");
         document.getElementById(id).style.display = "block";
 
-        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41", "page44", "page56", "page46", "page48", "page50", "page52", "page54"]; // Seiten mit Kamera
+        const cameraPages = ["page8", "page10", "page12", "page14", "page16", "page19", "page21", "page23", "page25", "page27", "page29", "page31", "page33", "page35", "page37", "page39", "page41", "page44", "page56", "page46", "page48", "page50", "page52", "page54", "page58"]; // Seiten mit Kamera
         const cameraContainer = document.getElementById("cameraContainer");
 
         if (cameraPages.includes(id)) {
@@ -1198,7 +1199,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gotoPage40").addEventListener("click", () => showPage("page40"));
     document.getElementById("gotoPage41").addEventListener("click", () => showPage("page41"));
 
-    document.getElementById("gotoPage17_from41").addEventListener("click", () => showPage("page17"));
+    //document.getElementById("gotoPage17_from41").addEventListener("click", () => showPage("page17"));
     document.getElementById("gotoPage5_from39").addEventListener("click", () => showPage("page38"));
     //
     document.getElementById("gotoPage40_from41").addEventListener("click", () => showPage("page40"));
@@ -1367,7 +1368,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-   
+    document.getElementById("gotoPage57").addEventListener("click", () => showPage("page57"));
+    document.getElementById("gotoPage1_from57_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage3_from57_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage5_from57_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage42_from57_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage40_from57").addEventListener("click", () => showPage("page40"));
+
+
+    document.getElementById("gotoPage58").addEventListener("click", () => showPage("page58"));
+    document.getElementById("gotoPage1_from58_ICON").addEventListener("click", () => showPage("page1"));
+    document.getElementById("gotoPage3_from58_ICON").addEventListener("click", () => showPage("page3"));
+    document.getElementById("gotoPage5_from58_ICON").addEventListener("click", () => showPage("page5"));
+    document.getElementById("gotoPage42_from58_ICON").addEventListener("click", () => showPage("page42"));
+    document.getElementById("gotoPage57_from58").addEventListener("click", () => showPage("page57"));
+        //goto17
+    document.getElementById("gotoPage17_from58").addEventListener("click", () => showPage("page17"));
 
 
 

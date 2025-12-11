@@ -180,13 +180,15 @@ h4 {
 /* ZWISCHENOTTO Blau (weiter oben)*/
 h5 {
     font-size: 55px;
-    margin-top: 200px;
+    margin-top: 175px;
     margin-bottom: 20px;
     margin-left: 120px;
     margin-right: 120px;
     color: rgb(11, 11, 130);
     text-align: center;
     font-family: sans-serif;
+    position: relative;
+    z-index: 999;
 }
 
 
@@ -202,7 +204,7 @@ h5 {
     font-size: 80px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
-    margin-top: 1300px;
+    margin-top: 1250px;
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
@@ -237,7 +239,7 @@ h5 {
     font-size: 80px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
-    margin-top: 1300px;
+    margin-top: 1250px;
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
@@ -272,7 +274,7 @@ h5 {
     font-size: 80px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
-    margin-top: 1300px;
+    margin-top: 1250px;
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
@@ -306,7 +308,7 @@ h5 {
     font-size: 80px;
     font-weight: bold;
     font-family: sans-serif;               /* wie h1 */
-    margin-top: 1300px;
+    margin-top: 1250px;
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
@@ -332,6 +334,39 @@ h5 {
 }
 
 
+
+
+/*Satz strukturiert kapitel 2 */
+.h15 {
+
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1350px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    z-index: 999;
+    color: rgb(246, 222, 208);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
+
+/*Satz strukturiert kapitel 3 */
+.h16 {
+ 
+    font-size: 80px;
+    font-weight: bold;
+    font-family: sans-serif;               /* wie h1 */
+    margin-top: 1350px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    z-index: 999;
+    color: rgb(216, 208, 255);
+    text-align: center;
+    line-height: 1.2;                      /* wie h1 */
+}
 
 
 
@@ -410,7 +445,9 @@ h5 {
 #page38,
 #page39, 
 #page40,
-#page41 {
+#page41,
+#page57,
+#page58 {
     background: rgb(246, 222, 208);
 }
 
@@ -563,7 +600,7 @@ h5 {
 .Zuruck_An_Den_Anfang {
     width: 600px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1650px;            /* vertikal verschieben */
+    top: 1700px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
@@ -592,13 +629,14 @@ h5 {
     z-index: 999;
 }
 
-.ZwischenOtto{
-    width: 1100px;
+
+.ZwischenOtto {
+    width: 1050px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 200px;            /* vertikal verschieben */
+    top: 250px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
-    z-index: 998;
+    z-index: 990;
     object-fit: cover;
 }
 
@@ -620,6 +658,17 @@ h5 {
     object-fit: cover;
 }
 
+.videoGrossGABRIEL {
+    width: 1450px;
+    position: absolute;   
+    top: 100px;            
+    left: 50%;             
+    transform: translateX(-50%) scaleX(-1);
+    z-index: 995;
+    object-fit: cover;
+}
+
+
 
 .videoKlein {
     width: 800px;
@@ -631,3 +680,37 @@ h5 {
     object-fit: cover;
 }
 
+
+
+
+.Sticker {
+    width: 1050px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1050px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 995;
+    object-fit: cover;
+}
+
+
+
+.Bedecken_hoch {
+    width: 250px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 275px;            /* vertikal verschieben */
+    left: 88%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 995;
+    object-fit: cover;
+}
+
+.Bedecken_quer {
+    width: 1200px;
+    position: absolute;    /* absolut innerhalb der Page */
+    top: 1900px;            /* vertikal verschieben */
+    left: 50%;             /* horizontal zentriert */
+    transform: translateX(-50%);
+    z-index: 995;
+    object-fit: cover;
+}
