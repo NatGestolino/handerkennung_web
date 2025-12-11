@@ -870,23 +870,23 @@ function startCameraProperly() {
 
 const allowedOutputsByPage = {
         //Kapitel 1 Smalltalk
-    page8:   ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page10:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page12:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page14:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page16:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page44:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
-    page56:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"],
+    page8:   ["Hallo/Tschüss!"],
+    page10:  ["Hallo/Tschüss!", "Guten", "Abend"],
+    page12:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend"],
+    page14:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir"],
+    page16:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir"], //gut !! NOCH HINZUFèGEN
+    page44:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"], //schlecht
+    page56:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"], //tschüss
         //Kapitel 2 Verständlichkeit
-    page19:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page21:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page23:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page25:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page27:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page46:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page48:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page50:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
-    page52:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Bitte", "Danke", "Langsamer", "Nochmal"],
+    page19:  ["Langsamer"],
+    page21:  ["Langsamer", "Nochmal"],
+    page23:  ["Langsamer", "Nochmal"], //bitte
+    page25:  ["Langsamer", "Nochmal"], //danke
+    page27:  ["Ich", "Langsamer", "Nochmal"],
+    page46:  ["Ich", "Du/Dich/Dir","Langsamer", "Nochmal"],
+    page48:  ["Ich", "Du/Dich/Dir","Nicht",  "Langsamer", "Nochmal"],
+    page50:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht", "Langsamer", "Nochmal"],
+    page52:  ["Ich", "Du/Dich/Dir", "Verstehen", "Nicht",  "Langsamer", "Nochmal"],
         //Kapitel 3 Vorlieben --> Keine Outputs 
     page29:  ["x"],
     page31:  ["x"],

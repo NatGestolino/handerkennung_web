@@ -14,6 +14,12 @@ html, body {
 }
 
 
+
+video {
+    display: block !important;
+}
+
+
 /* === Kamera-Viewport (16:9, 90% Breite) === */
 #cameraContainer {
 
@@ -35,12 +41,14 @@ html, body {
 
 /* === Video proportional einpassen === */
 #video {
-    position: relative;   /* damit z-index wirkt */
-    z-index: 2000;        /* höher als alles andere (999) */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* kein Verzerren */
-    transform: scaleX(-1); /* Horizontal spiegeln */
+    position: absolute;
+    top: -1px;   /* <--- FIX */
+    left: -1px;  /* <--- FIX */
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    object-fit: cover;
+    transform: scaleX(-1);
+    z-index: 2000;
 }
 
 /* === Canvas für Zeichnungen über dem Video === */
@@ -110,8 +118,8 @@ h1 {
     font-size: 55px;
     margin-top: 300px;
     margin-bottom: 20px;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 150px;
+    margin-right: 150px;
     color: rgb(11, 11, 130);
     text-align: center;
     font-family: sans-serif;
@@ -431,10 +439,11 @@ h5 {
 .icon_Otto {
     width: 1100px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 350px;            /* vertikal verschieben */
+    top: 400px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     z-index: 995;
+    object-fit: cover;
 }
 
 
@@ -590,6 +599,7 @@ h5 {
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     z-index: 998;
+    object-fit: cover;
 }
 
 
@@ -607,6 +617,7 @@ h5 {
     left: 50%;             
     transform: translateX(-50%) scaleX(-1);
     z-index: 995;
+    object-fit: cover;
 }
 
 
@@ -617,5 +628,6 @@ h5 {
     left: 50%;             
     transform: translateX(-50%) scaleX(-1);
     z-index: 995;
+    object-fit: cover;
 }
 
