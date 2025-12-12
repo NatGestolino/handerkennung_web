@@ -283,16 +283,21 @@ function Hallo(hand, history) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////GUT NEU
+
+// daumen rechts????/ 4 höher als 3/ 6,10,14,18 als 5, 9, 13, 17 am weitesten links? / 
+
 function Gut(hand) {
     if (!hand) return false;
 
     const fingertips = hand[8] && hand[12] && hand[16] && hand[20];
     const thumbUp = hand[4].y < fingertips.y 
-    const thumbUp2 = hand[4].y < hand[3];
+    const thumbUp2 = hand[4].y < hand[3].y;
     const thumbRight = hand[4].x < hand[6].x;
+    const fingersLeft = hand[6].x > hand[5].x && hand[10].x > hand[9].x && hand[14].x > hand[13].x && hand[18].x > hand[17].x;
+    //const fingies = fingertips.x < hand[6] && fingertips.x < hand[10] && fingertips.x < hand[14]  && fingertips.x < hand[19] 
 
 
-    return thumbUp && thumbUp2 && thumbRight;
+    return thumbUp && thumbUp2 && thumbRight && fingersLeft;
 
 }
 
@@ -742,6 +747,7 @@ function Closed(hand, threshold_X = 0.05, threshold_Y = 0.05) {
     const dx4 = Math.abs(hand[12].x - hand[20].x);
     const dy4 = Math.abs(hand[12].y - hand[20].y);
 
+    //const knuckiesHigher = hand[6].y < hand[8].y &&  hand[10].y < hand[12].y &&  hand[16].y < hand[12].y &&  hand[18].y < hand[20].y;
 
     return dx < threshold_X && dy < threshold_Y && dx2 < threshold_X && dy2 < threshold_Y && dx3 < threshold_X && dy3 < threshold_Y && dx4 < threshold_X && dy4 < threshold_Y;
 
@@ -874,9 +880,9 @@ const allowedOutputsByPage = {
     page10:  ["Hallo/Tschüss!", "Guten", "Abend"],
     page12:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend"],
     page14:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir"],
-    page16:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir"], //gut !! NOCH HINZUFèGEN
-    page44:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"], //schlecht
-    page56:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht"], //tschüss
+    page16:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Gut"], //gut !! NOCH HINZUFèGEN
+    page44:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht", "Gut"], //schlecht
+    page56:  ["Wie geht's!", "Hallo/Tschüss!", "Guten", "Abend", "Du/Dich/Dir", "Schlecht", "Gut"], //tschüss
         //Kapitel 2 Verständlichkeit
     page19:  ["Langsamer"],
     page21:  ["Langsamer", "Nochmal"],
@@ -961,8 +967,8 @@ hands.onResults((results) => {
         //if (Gut_Handbewegung(detected.right, gutStateRight)) output = "Gut erkannt!";
         //if (detected.right && Gut(detected.right)) output = "GUT erkannt"
         //if (detected.left && Gut(detected.left)) output = "GUT erkannt"
-        if (detected.left && Gut(detected.left, motionLeft)) output = "GUUUT";
-        if (detected.right && Gut(detected.right, motionRight)) output = "GUUUT";
+        if (detected.left && Gut(detected.left, motionLeft)) output = "Gut";
+        if (detected.right && Gut(detected.right, motionRight)) output = "Gut";
 
         if (detected.left && SchlechtMitBewegung(detected.left, "Left", motionLeft)) output = "Schlecht";
         if (detected.right && SchlechtMitBewegung(detected.right, "Right", motionRight)) output = "Schlecht";
@@ -1066,7 +1072,25 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             cameraContainer.style.display = "none"; // Kamera verstecken
         }
+
+        startInactivityTimer();
+
     }
+
+let inactivityTimer = null;
+
+function startInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
+
+    inactivityTimer = setTimeout(() => {
+        showPage("page1");
+    }, 180000); // 3 Minuten
+}
+
+// Optional: Benutzer-Aktivität setzt Timer zurück
+["click", "mousemove", "touchstart", "keypress"].forEach(event => {
+    document.addEventListener(event, startInactivityTimer);
+});
 
     // Beim Laden: Page1 anzeigen
     showPage("page1");
@@ -1571,4 +1595,3 @@ window.addEventListener("DOMContentLoaded", () => {
     
 
 });
-

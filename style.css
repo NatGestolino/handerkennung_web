@@ -146,8 +146,8 @@ h2 {
     font-size: 55px;
     margin-top: 300px;
     margin-bottom: 20px;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 150px;
+    margin-right: 150px;
     color: rgb(246, 222, 208);
     text-align: center;
     font-family: sans-serif;
@@ -170,8 +170,8 @@ h4 {
     font-size: 55px;
     margin-top: 300px;
     margin-bottom: 20px;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 150px;
+    margin-right: 150px;
     color: rgb(170, 38, 36);
     text-align: center;
     font-family: sans-serif;
@@ -447,7 +447,9 @@ h5 {
 #page40,
 #page41,
 #page57,
-#page58 {
+#page58,
+#page3,
+#page4 {
     background: rgb(246, 222, 208);
 }
 
@@ -458,7 +460,7 @@ h5 {
 .icon_pfeil_back {
     width: 200px;
     position: absolute;
-    top: 60px;
+    top: 62px;
     left: 100px;
     cursor: pointer;
     z-index: 999;
@@ -467,7 +469,7 @@ h5 {
 .icon_pfeil_vor {
     width: 200px;
     position: absolute;
-    top: 60px;
+    top: 58px;
     right: 100px;
     cursor: pointer;
     z-index: 999;
@@ -686,7 +688,7 @@ h5 {
 .Sticker {
     width: 1050px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1050px;            /* vertikal verschieben */
+    top: 1000px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     z-index: 995;
