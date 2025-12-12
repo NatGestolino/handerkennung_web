@@ -602,7 +602,7 @@ h5 {
 .Zuruck_An_Den_Anfang {
     width: 600px;
     position: absolute;    /* absolut innerhalb der Page */
-    top: 1700px;            /* vertikal verschieben */
+    top: 1650px;            /* vertikal verschieben */
     left: 50%;             /* horizontal zentriert */
     transform: translateX(-50%);
     cursor: pointer;
