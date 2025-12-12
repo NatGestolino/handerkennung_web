@@ -850,7 +850,11 @@ function startCameraProperly() {
         video: {
             width: { ideal: 1280 },  // 4:3 max native Auflösung Frontkamera
             height: { ideal: 960 },
-            facingMode: "user"
+            facingMode: "user",
+
+            frameRate: { ideal: 15, max: 15 },
+            
+            
         },
         audio: false
     }).then(stream => {
