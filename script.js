@@ -848,8 +848,8 @@ function startCameraProperly() {
 
     navigator.mediaDevices.getUserMedia({
         video: {
-            width: { ideal: 1280 },  // 4:3 max native Auflösung Frontkamera
-            height: { ideal: 960 },
+            width: { ideal: 640 },  // 4:3 max native Auflösung Frontkamera
+            height: { ideal: 480 },
             facingMode: "user",
 
             frameRate: { ideal: 15, max: 15 },
