@@ -1,3 +1,5 @@
+
+
 // =====================
 // Canvas + Video Setup
 // =====================
@@ -840,7 +842,12 @@ function Lieber(hand){
 // =====================
 // Kamera starten
 // =====================
+///////////////////////////////////NEU
 let cameraRunning = false;
+let cameraInstance = null;
+let mediaStream = null;
+//////////////////////////////////////
+
 let processing = false;
 
 function startCameraProperly() {
@@ -856,10 +863,12 @@ function startCameraProperly() {
         },
         audio: false
     }).then(stream => {
+        mediaStream = stream;
         video.srcObject = stream;
 
-        const camera = new Camera(video, {
+        cameraInstance = new Camera(video, {
             onFrame: async () => {
+                if (!cameraRunning) return;
                 if (processing) return;
                 processing = true;
 
@@ -871,8 +880,25 @@ function startCameraProperly() {
             height: 480
         });
 
-        camera.start();
+        cameraInstance.start();
     });
+}
+
+function stopCameraProperly() {
+    cameraRunning = false;
+    processing = false;
+
+    if (cameraInstance) {
+        cameraInstance.stop();
+        cameraInstance = null;
+    }
+
+    if (mediaStream) {
+        mediaStream.getTracks().forEach(t => t.stop());
+        mediaStream = null;
+    }
+
+    video.srcObject = null;
 }
 
 
@@ -912,14 +938,18 @@ const allowedOutputsByPage = {
 };
 
 
-// "Ich", "Du"
-
 
 
 // =====================
 // MediaPipe Callback
 // =====================
 hands.onResults((results) => {
+
+    if (!cameraRunning) return;
+    if (!currentPage) return;
+
+
+
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     const outputDiv = document.getElementById("output");
@@ -1072,11 +1102,13 @@ window.addEventListener("DOMContentLoaded", () => {
         const cameraContainer = document.getElementById("cameraContainer");
 
         if (cameraPages.includes(id)) {
-            cameraContainer.style.display = "block"; // Kamera anzeigen
+            cameraContainer.style.display = "block";
             startCameraProperly();
         } else {
-            cameraContainer.style.display = "none"; // Kamera verstecken
+            cameraContainer.style.display = "none";
+            stopCameraProperly();   ////////////////////////NEU///////////////////////
         }
+
 
         startInactivityTimer();
 
