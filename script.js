@@ -837,33 +837,22 @@ function Lieber(hand){
 
 
 
-
-
-
-
-
-
-
-let cameraRunning = false;
-
 // =====================
 // Kamera starten
 // =====================
+let cameraRunning = false;
+let processing = false;
+
 function startCameraProperly() {
     if (cameraRunning) return;
     cameraRunning = true;
 
-    const video = document.getElementById("video");
-
     navigator.mediaDevices.getUserMedia({
         video: {
-            width: { ideal: 640 },  // 4:3 max native Auflösung Frontkamera
-            height: { ideal: 480 },
-            facingMode: "user",
-
-            frameRate: { ideal: 15, max: 15 },
-            
-            
+            width: 640,
+            height: 480,
+            frameRate: { max: 12 },
+            facingMode: "user"
         },
         audio: false
     }).then(stream => {
@@ -871,15 +860,18 @@ function startCameraProperly() {
 
         const camera = new Camera(video, {
             onFrame: async () => {
+                if (processing) return;
+                processing = true;
+
                 await hands.send({ image: video });
+
+                processing = false;
             },
             width: 640,
             height: 480
         });
 
         camera.start();
-    }).catch(err => {
-        console.error("Fehler beim Zugriff auf die Kamera:", err);
     });
 }
 
