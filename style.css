@@ -1,3 +1,9 @@
+
+:root {
+    --ui-scale: 0.5;
+}
+
+
 /* === BODY zentriert alles === */
 html, body {
     width: 100%;
@@ -24,18 +30,23 @@ video {
 #cameraContainer {
 
     position: absolute;
-    width: 1000px;  /* gewünschte Breite */
-    height: 1000px; /* gleiche Höhe = Quadrat */
+    width: 450px;  /* gewünschte Breite */
+    height: 450px; /* gleiche Höhe = Quadrat */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(255, 255, 255); /* optional, nur zur Kontrolle */
+
+    top: 350px;
+    
+
+   
     z-index: 998;
 
-    border-radius: 12px;
-    background: #00000022;  /* leichtes Grau zum Testen, kannst du löschen */
+    margin-top: 6%;
 
-    margin-top: 12%;
+
+
+    
 }
 
 
@@ -53,8 +64,9 @@ video {
 
 /* === Canvas für Zeichnungen über dem Video === */
 #canvas {
-    display: none;   /* Canvas unsichtbar */
+    display: none;
 }
+
 
 
 
@@ -378,6 +390,9 @@ h5 {
     width: 1668px;
     height: 2224px;
     background: rgb(245, 245, 245);
+
+    transform: scale(var(--ui-scale));
+    transform-origin: top center;
 }
 
 

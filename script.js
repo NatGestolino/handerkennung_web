@@ -7,6 +7,15 @@ const ctx = canvas.getContext("2d");
 const textDiv = document.getElementById("text");
 
 // =====================
+// iPad-optimierte Canvas-Größe
+// =====================
+const TARGET_W = 640;
+const TARGET_H = 480;
+
+canvas.width  = TARGET_W;
+canvas.height = TARGET_H;
+
+// =====================
 // MediaPipe Hands Setup
 // =====================
 const hands = new Hands({
@@ -864,8 +873,8 @@ function startCameraProperly() {
             onFrame: async () => {
                 await hands.send({ image: video });
             },
-            width: 1280,
-            height: 960
+            width: 640,
+            height: 480
         });
 
         camera.start();
