@@ -1094,7 +1094,7 @@ function stopAllPageVideos() {
     document.querySelectorAll(".page video").forEach(v => {
         v.pause();
         v.removeAttribute("src");
-        v.load(); // 💥 zwingt Safari aufzuräumen
+        v.load(); // zwingt Safari aufzuräumen
     });
 }
 
@@ -1109,9 +1109,15 @@ function playVideosOnPage(pageId) {
         // src nur setzen, wenn noch keines da ist
         if (!v.src) {
             v.src = src;
+            v.load();
         }
 
-        v.play().catch(() => {});
+        // erst spielen, wenn wirklich sichtbar
+        requestAnimationFrame(() => {
+            if (v.offsetParent !== null) {
+                v.play().catch(() => {});
+            }
+        });
     });
 }
 
