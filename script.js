@@ -1093,7 +1093,8 @@ if (currentPage && allowedOutputsByPage[currentPage]) {
 function stopAllPageVideos() {
     document.querySelectorAll(".page video").forEach(v => {
         v.pause();
-        v.currentTime = 0;
+        v.removeAttribute("src");
+        v.load(); // 💥 zwingt Safari aufzuräumen
     });
 }
 
@@ -1102,6 +1103,14 @@ function playVideosOnPage(pageId) {
     if (!page) return;
 
     page.querySelectorAll("video").forEach(v => {
+        const src = v.dataset.src;
+        if (!src) return;
+
+        // src nur setzen, wenn noch keines da ist
+        if (!v.src) {
+            v.src = src;
+        }
+
         v.play().catch(() => {});
     });
 }
@@ -1126,6 +1135,12 @@ window.addEventListener("DOMContentLoaded", () => {
             p.classList.remove("active");
         });
 
+
+         //  ALLE Videos zerstören
+        stopAllPageVideos();
+
+
+
         // Aktive Seite anzeigen
         const page = document.getElementById(id);
         page.style.display = "block";
@@ -1134,7 +1149,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // =====================
         // Videos steuern
         // =====================
-        stopAllPageVideos();
+    
         playVideosOnPage(id);
 
         // =====================
